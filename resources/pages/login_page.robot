@@ -4,8 +4,10 @@ Resource    ../elements/login_elements.robot
 
 *** Keywords ***
 Acessar a pagina de login
-    Open Browser    ${URL_SAUCE}    chrome    options=add_argument("--incognito")
-    Maximize Browser Window
+    # Trocamos de 'chrome' para 'headlesschrome'
+    Open Browser    ${URL_SAUCE}    headlesschrome    options=add_argument("--incognito")
+    # Forçamos a resolução em vez de maximizar
+    Set Window Size    1920    1080
 
 Preencher credenciais validas
     [Arguments]    ${usuario}    ${senha}
