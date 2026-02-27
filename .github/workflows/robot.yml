@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Baixar o código do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar o Python
         uses: actions/setup-python@v4
@@ -29,7 +29,7 @@ jobs:
 
       - name: Salvar relatórios de teste (Artefatos)
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: robot-framework-reports
           path: results/
