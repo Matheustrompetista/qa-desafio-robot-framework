@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-26T17:47:02.231329" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Matheus\IdeaProjects\Desafio_QA\ui-robot-framework\tests">
+<suite id="s1-s1" name="Checkout Bdd" source="C:\Users\Matheus\IdeaProjects\Desafio_QA\ui-robot-framework\tests\checkout_bdd.robot">
+<test id="s1-s1-t1" name="Cenario: Realizar checkout de um produto com sucesso" line="7">
+<kw name="Dado que eu esteja logado no sistema SauceDemo">
+<kw name="Acessar a pagina de login" owner="login_page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:02.519255" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL_SAUCE}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-26T17:47:02.518717" elapsed="2.084789"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-26T17:47:04.603932" elapsed="0.052194"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:02.517631" elapsed="2.138732"/>
+</kw>
+<kw name="Preencher credenciais validas" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:04.658924" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${INPUT_USERNAME}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:04.657446" elapsed="0.265211"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:04.923722" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:04.923090" elapsed="0.184452"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-02-26T17:47:04.656730" elapsed="0.451078"/>
+</kw>
+<kw name="Clicar em login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.109726" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.109173" elapsed="0.167197"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:05.108179" elapsed="0.168443"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:02.516882" elapsed="2.759917"/>
+</kw>
+<kw name="Quando eu adicionar uma mochila ao carrinho">
+<kw name="Adicionar produto ao carrinho" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_ADD_CART}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.279132" elapsed="0.032695"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.312845" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>${BTN_ADD_CART}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.312325" elapsed="0.166674"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.480417" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<arg>${BTN_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.479838" elapsed="0.108389"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:05.278550" elapsed="0.309900"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:05.278005" elapsed="0.310579"/>
+</kw>
+<kw name="E prosseguir para o checkout preenchendo meus dados">
+<kw name="Ir para o checkout" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CHECKOUT}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.590702" elapsed="0.024256"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.615437" level="INFO">Clicking button 'id=checkout'.</msg>
+<arg>${BTN_CHECKOUT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.615161" elapsed="0.094953"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:05.590133" elapsed="0.120222"/>
+</kw>
+<kw name="Preencher dados de entrega" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_FIRSTNAME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.711767" elapsed="0.024842"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.737316" level="INFO">Typing text 'QA' into text field 'id=first-name'.</msg>
+<arg>${INPUT_FIRSTNAME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.736894" elapsed="0.106117"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.843667" level="INFO">Typing text 'Pleno' into text field 'id=last-name'.</msg>
+<arg>${INPUT_LASTNAME}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.843239" elapsed="0.123118"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:05.967228" level="INFO">Typing text '12345-678' into text field 'id=postal-code'.</msg>
+<arg>${INPUT_ZIP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:05.966717" elapsed="0.150093"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BTN_CONTINUE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.117132" elapsed="0.304425"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CONTINUE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.421776" elapsed="0.019588"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:06.442027" level="INFO">Clicking element 'css=#continue'.</msg>
+<arg>${BTN_CONTINUE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.441677" elapsed="0.101923"/>
+</kw>
+<arg>QA</arg>
+<arg>Pleno</arg>
+<arg>12345-678</arg>
+<status status="PASS" start="2026-02-26T17:47:05.711044" elapsed="0.832777"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:05.589568" elapsed="0.954422"/>
+</kw>
+<kw name="E finalizar a compra">
+<kw name="Finalizar pedido" owner="checkout_page">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BTN_FINISH}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.546975" elapsed="0.017077"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BTN_FINISH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.564260" elapsed="0.292076"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_FINISH}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.856818" elapsed="0.040565"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:06.898050" level="INFO">Clicking button 'id=finish'.</msg>
+<arg>${BTN_FINISH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:06.897697" elapsed="0.130559"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:06.546384" elapsed="0.482098"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:06.545436" elapsed="0.483184"/>
+</kw>
+<kw name="Entao devo ver a mensagem de sucesso do pedido">
+<kw name="Validar mensagem de sucesso" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MSG_SUCCESS}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:07.029750" elapsed="0.027479"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:07.083066" level="INFO">Element 'css=.complete-header' contains text 'Thank you for your order!'.</msg>
+<arg>${MSG_SUCCESS}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-02-26T17:47:07.057753" elapsed="0.025422"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:07.029450" elapsed="0.053840"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:07.029072" elapsed="0.054294"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-26T17:47:07.083837" elapsed="2.302836"/>
+</kw>
+<doc>Testa o fluxo completo de compra (checkout) no SauceDemo</doc>
+<status status="PASS" start="2026-02-26T17:47:02.515543" elapsed="6.872207"/>
+</test>
+<status status="PASS" start="2026-02-26T17:47:02.279530" elapsed="7.112316"/>
+</suite>
+<suite id="s1-s2" name="Login Bdd" source="C:\Users\Matheus\IdeaProjects\Desafio_QA\ui-robot-framework\tests\login_bdd.robot">
+<test id="s1-s2-t1" name="Cenario: Login com sucesso no SauceDemo" line="6">
+<kw name="Dado que eu acesse a pagina de login do SauceDemo">
+<kw name="Acessar a pagina de login" owner="login_page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:09.419582" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL_SAUCE}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-26T17:47:09.418805" elapsed="1.694111"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.113330" elapsed="0.036874"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:09.417830" elapsed="1.732627"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:09.415789" elapsed="1.734936"/>
+</kw>
+<kw name="Quando eu preencher as credenciais de acesso validas">
+<kw name="Preencher credenciais validas" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:11.157830" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${INPUT_USERNAME}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.156456" elapsed="0.265079"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:11.422522" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.421869" elapsed="0.171665"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-02-26T17:47:11.155064" elapsed="0.438710"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:11.154515" elapsed="0.439425"/>
+</kw>
+<kw name="E clicar no botao de login">
+<kw name="Clicar em login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:11.596178" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.595768" elapsed="0.184554"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:11.595160" elapsed="0.185397"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:11.594481" elapsed="0.186225"/>
+</kw>
+<kw name="Entao devo ser redirecionado para a pagina de produtos">
+<kw name="Validar login com sucesso" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITLE_PRODUCTS}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.786330" elapsed="0.040967"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-26T17:47:11.888796" level="INFO">Element 'css=.title' contains text 'Products'.</msg>
+<arg>${TITLE_PRODUCTS}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.827591" elapsed="0.061450"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:11.785750" elapsed="0.103482"/>
+</kw>
+<status status="PASS" start="2026-02-26T17:47:11.785035" elapsed="0.104333"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-26T17:47:11.889931" elapsed="2.317366"/>
+</kw>
+<doc>Testa o fluxo de login com um usuario valido</doc>
+<status status="PASS" start="2026-02-26T17:47:09.411387" elapsed="4.797101"/>
+</test>
+<status status="PASS" start="2026-02-26T17:47:09.395994" elapsed="4.816013"/>
+</suite>
+<status status="PASS" start="2026-02-26T17:47:02.233453" elapsed="11.983201"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="0" skip="0">Tests</stat>
+<stat name="Checkout Bdd" id="s1-s1" pass="1" fail="0" skip="0">Tests.Checkout Bdd</stat>
+<stat name="Login Bdd" id="s1-s2" pass="1" fail="0" skip="0">Tests.Login Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
