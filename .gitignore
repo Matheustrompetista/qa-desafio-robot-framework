@@ -1,0 +1,13 @@
+# Logs e Evidências gerados pelo Robot
+logs/
+results/
+report.html
+log.html
+output.xml
+*.png
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+.venv/
+venv/

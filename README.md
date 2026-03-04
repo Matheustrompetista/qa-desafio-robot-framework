@@ -1,20 +1,35 @@
-# Desafio QA - Testes de Interface com Robot Framework
+# 🤖 Desafio QA - Automação Web com Robot Framework
 
-Este repositório contém a automação dos fluxos de Login e Checkout do site SauceDemo, utilizando Robot Framework e o padrão Page Objects.
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Robot Framework](https://img.shields.io/badge/Robot_Framework-000000?style=for-the-badge&logo=robot-framework&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-## Pré-requisitos
-- Python 3.x instalado e adicionado ao PATH.
-- Navegador Google Chrome.
+Este repositório contém a automação de testes de interface (UI) para os fluxos críticos do [SauceDemo](https://www.saucedemo.com/), construída com **Robot Framework** e **SeleniumLibrary**.
 
-## Como instalar as dependências
-Execute o comando abaixo na raiz do projeto:
-`pip install robotframework robotframework-seleniumlibrary`
+A arquitetura foi desenhada focando em manutenibilidade, escalabilidade e boas práticas de engenharia de software.
 
-## Como executar os testes
-Para rodar todos os testes e gerar os relatórios na pasta `results`, execute:
-`python -m robot -d results tests/`
+## 🎯 Escopo e Cobertura de Testes
 
-## Estrutura do Projeto
-- `tests/`: Contém os cenários de teste escritos em formato BDD.
-- `resources/pages/`: Contém as ações de cada página (Page Objects).
-- `resources/elements/`: Contém os mapeadores (locators) dos elementos web.
+O projeto valida tanto o comportamento esperado quanto o tratamento de erros do sistema (Happy Path e Unhappy Path), utilizando a escrita orientada a comportamento (**BDD**):
+
+- **Login:**
+    - ✅ Autenticação com credenciais válidas.
+    - ❌ *[Cenário Negativo]* Bloqueio de acesso e validação de mensagem de erro com senha incorreta.
+- **Checkout:**
+    - ✅ Fluxo completo de compra (adicionar ao carrinho, preencher dados e finalizar).
+    - ❌ *[Cenário Negativo]* Validação de obrigatoriedade de campos (ex: tentar avançar sem preencher o nome).
+
+---
+
+## 🏗️ Arquitetura do Projeto
+
+O framework foi estruturado utilizando o padrão **Page Object Model (POM)**, garantindo a Separação de Responsabilidades (Separation of Concerns):
+
+```text
+📦 ui-robot-framework
+ ┣ 📂 resources/
+ ┃ ┣ 📂 elements/   # Dicionário de seletores web (IDs, CSS, XPaths)
+ ┃ ┗ 📂 pages/      # Ações e interações do usuário encapsuladas (Keywords)
+ ┣ 📂 tests/        # Cenários de teste escritos em BDD (Dado, Quando, Então)
+ ┣ 📂 results/      # Relatórios HTML e Screenshots gerados automaticamente
+ ┗ 📜 .gitignore    # Higiene do repositório
